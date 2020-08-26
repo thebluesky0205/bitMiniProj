@@ -120,7 +120,7 @@ public class MemberController {
 
         return ResponseEntity
                 .status(HttpStatus.FORBIDDEN)
-                .body("관리자 계정을 생성 할수 없습니다 + 문의전화 02-722-1481 .");
+                .body("계정을 생성 할수 없습니다 + 문의전화 02-722-1481 .");
     }
 
     @GetMapping("/myinfo")

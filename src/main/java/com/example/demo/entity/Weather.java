@@ -18,35 +18,31 @@ public class Weather {
     private String weatherNo;
 
     @Column(length = 500, nullable = false)
-    private String day;
+    private String dday;
 
     @Column(length = 500, nullable = false)
-    private String dow;
+    private String mimg;
 
     @Column(length = 500, nullable = false)
-    private String imageM;
+    private String aimg;
 
     @Column(length = 500, nullable = false)
-    private String imageA;
+    private String mrr;
 
     @Column(length = 500, nullable = false)
-    private String tempAm;
+    private String arr;
 
     @Column(length = 500, nullable = false)
-    private String tempPm;
-
-    @Column(length = 2000, nullable = false)
-    private String address;
+    private String temp;
 
     @Builder
-    public Weather(String weatherNo, String day, String dow, String imageM, String imageA, String tempAm, String tempPm, String address) {
+    public Weather(String weatherNo, String dday, String mimg, String aimg, String mrr, String arr,String temp) {
         this.weatherNo = weatherNo;
-        this.day = day;
-        this.dow = dow;
-        this.imageM = imageM;
-        this.imageA = imageA;
-        this.tempAm = tempAm;
-        this.tempPm = tempPm;
-        this.address = address;
+        this.dday = dday;
+        this.mimg = mimg;
+        this.aimg = aimg;
+        this.mrr = mrr;
+        this.arr = arr;
+        this.temp = temp;
     }
 }
