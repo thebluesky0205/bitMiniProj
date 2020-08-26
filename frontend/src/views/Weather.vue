@@ -1,26 +1,24 @@
+//header.vue
+
 <template>
   <div>
   <h1>WEATHER PAGE</h1>
     <div id="mainNavigation">
-      <nav v-bind:class="active" v-on:click.prevent>
+      <nav v-on:click.prevent>
         <router-link :to="{ name: 'Home' }"
-          class="nav-link"
-          active-class="active">
+          class="nav-link">
         Home
         </router-link>
-        <router-link :to="{ name: 'MyVlog' }"
-          class="nav-link"
-          active-class="active">
-        MyVlog
+        <router-link :to="{ name: 'Attendance' }"
+          class="nav-link">
+        Attendance
         </router-link>
         <router-link :to="{ name: 'Weather' }"
-          class="nav-link"
-          active-class="active">
+          class="nav-link">
         Weather
         </router-link>
         <router-link :to="{ name: 'Memo' }"
-          class="nav-link"
-          active-class="active">
+          class="nav-link">
         Memo
         </router-link>
       </nav>
@@ -29,12 +27,17 @@
       <template v-slot:default>
         <thead>
           <tr>
-            <v-btn @click="start()" text color="black">[ 실시간 ]</v-btn>
+            <v-btn @click="start()" text color="black">[ 서울 주간 날씨 ]</v-btn>
           </tr>
         </thead>
         <tbody>
           <tr v-for="list of lists" :key="list.title">
-            <td><a @click="clickWeather(list.weatherNo)">{{ list.day }}</a></td>
+            <td><a @click="clickWeather(list.weatherNo)">
+            {{ list.dday }} ||
+            강수확률(오전/오후) -- {{ list.mrr }} /
+            {{ list.arr }}% ||
+            온도(최저/최) -- {{ list.temp }}
+            </a></td>
           </tr>
         </tbody>
       </template>

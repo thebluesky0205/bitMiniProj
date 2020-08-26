@@ -2,28 +2,23 @@
   <v-app id="inspire">
     <div class="Home">
       <div id="header" v-if="isAuthorized">
-      <h1>그냥 아무생각 없는 곳</h1>
-      <h1>.....</h1>
+      <h1>{{ myinfo.userName }}님의 프로젝트</h1>
       <div id="mainNavigation">
-        <nav v-bind:class="active" v-on:click.prevent>
+        <nav v-on:click.prevent>
           <router-link :to="{ name: 'Home' }"
-            class="nav-link"
-            active-class="active">
+            class="nav-link">
           Home
           </router-link>
-          <router-link :to="{ name: 'MyVlog' }"
-            class="nav-link"
-            active-class="active">
-          MyVLog
+          <router-link :to="{ name: 'Attendance' }"
+            class="nav-link">
+          Attendance
           </router-link>
           <router-link :to="{ name: 'Weather' }"
-            class="nav-link"
-            active-class="active">
+            class="nav-link">
           Weather
           </router-link>
           <router-link :to="{ name: 'Memo' }"
-            class="nav-link"
-            active-class="active">
+            class="nav-link">
           Memo
           </router-link>
           <a href="#" v-on:click="onClickLogout">Logout</a>
@@ -94,14 +89,21 @@
         </div>
       </v-container>
     </div>
-
       <div id="header" v-else>
-        <button id="login" @click="$router.push('LoginPage')">
-          [ 로그인 ]
-        </button>
-        <button id="login" @click="$router.push('AdminSetupPage')">
-          [ 회원가입 ]
-        </button>
+      <div class="loginF">
+        <h1>Mini_Project.ing</h1>
+        <hr>
+        <form>
+          <router-link :to="{ name: 'LoginPage' }"
+            class="nav-link">
+          Login
+          </router-link>
+          <router-link :to="{ name: 'AdminSetupPage' }"
+            class="nav-link">
+          | Create
+          </router-link>
+        </form>
+      </div>
       </div>
       <div>
         <v-footer
@@ -119,7 +121,7 @@
 /* eslint-disable no-unused-vars */
 import store from '../store'
 import Vue from 'vue'
-
+import LoginForm from '@/components/LoginForm.vue'
 import { mapState, mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -140,15 +142,13 @@ export default {
     onClickLogout () {
       this.logout()
       alert('로그아웃 되었습니다.')
-      this.$router.push({ name: 'Home' })
+      this.$router.push({ name: 'LoginPage' })
     },
     ...mapActions(['logout'])
   },
   computed: {
     ...mapState(['myinfo']),
     ...mapGetters(['isAuthorized'])
-  },
-  components: {
   }
 }
 </script>
@@ -259,10 +259,30 @@ img {
   background-color: #;
   color: #;
   font-weight: bold;
-  float: right;
 }
 
-.calendar {
+.firstPage{
+  margin:150px auto;
+  width: 343px;
+  height: 280px;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
 }
+.firstPage h1{
+  font-family: 'Galada', cursive;
+  color:#5587b4;
+  letter-spacing:8px;
+  text-align:center;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.firstPage hr{
+  opacity:0.2;
+}
+form{
+  margin: 0 auto;
+  align: center;
 
+}
 </style>

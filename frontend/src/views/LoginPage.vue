@@ -1,6 +1,5 @@
 <template>
   <div align="center">
-    <h2>Login</h2>
     <login-form @submit="onSubmit"/>
   </div>
 </template>
@@ -17,14 +16,18 @@ export default {
     onSubmit (payload) {
       console.log('loginPage onSubmit()')
       this.login(payload).then(res => {
-        alert('Login Success')
+        alert('로그인 되었습니다.')
         this.$router.push({ name: 'Home' })
       }).catch(err => {
         // alert(err.response.data.message)
-        alert('Something Fail: ', err)
+        alert('다시 입력해주세요.', err)
       })
     },
     ...mapActions(['login'])
   }
 }
 </script>
+
+<style>
+
+</style>

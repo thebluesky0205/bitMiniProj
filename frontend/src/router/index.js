@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Test from '../views/Test.vue'
 import Test2 from '../views/Test2.vue'
 
 // For Login System
@@ -11,7 +10,7 @@ import AdminSetupPage from '../views/AdminSetupPage.vue'
 // For Menu
 import Memo from '../views/Memo.vue'
 import Weather from '../views/Weather.vue'
-import MyVlog from '../views/MyVlog.vue'
+import Attendance from '../views/Attendance.vue'
 
 Vue.use(VueRouter)
 
@@ -50,17 +49,10 @@ const routes = [
     }
   },
   {
-    path: '/MyVlog',
-    name: 'MyVlog',
+    path: '/Attendance',
+    name: 'Attendance',
     components: {
-      default: MyVlog
-    }
-  },
-  {
-    path: '/Test',
-    name: 'Test',
-    components: {
-      default: Test
+      default: Attendance
     }
   },
   {

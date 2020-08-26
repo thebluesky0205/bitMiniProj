@@ -2,25 +2,22 @@
   <div>
     <h1>MEMO PAGE</h1>
     <div id="mainNavigation">
-      <nav v-bind:class="active" v-on:click.prevent>
+      <nav v-on:click.prevent>
         <router-link :to="{ name: 'Home' }"
           class="nav-link"
           active-class="active">
         Home
         </router-link>
-        <router-link :to="{ name: 'MyVlog' }"
-          class="nav-link"
-          active-class="active">
-        MyVlog
+        <router-link :to="{ name: 'Attendance' }"
+          class="nav-link">
+        Attendance
         </router-link>
         <router-link :to="{ name: 'Weather' }"
-          class="nav-link"
-          active-class="active">
+          class="nav-link">
         Weather
         </router-link>
         <router-link :to="{ name: 'Memo' }"
-          class="nav-link"
-          active-class="active">
+          class="nav-link">
         Memo
         </router-link>
       </nav>

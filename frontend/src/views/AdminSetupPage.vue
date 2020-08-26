@@ -1,6 +1,5 @@
 <template>
   <div align="center">
-    <h2>회원가입</h2>
     <admin-setup-form @submit="onSubmit"/>
   </div>
 </template>
@@ -24,9 +23,9 @@ export default {
       axios.post('http://localhost:7777/users/setup',
         { userId, userName, userPw, userBorn, userEmail, userPhone })
         .then(res => {
-          alert('Register Success')
+          alert('가입되었으니 로그인 해주세요.')
           this.$router.push({
-            name: 'Home'
+            name: 'LoginPage'
           })
         })
         .catch(err => {
