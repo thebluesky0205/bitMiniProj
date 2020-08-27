@@ -4,7 +4,9 @@ import {
   DESTROY_ACCESS_TOKEN,
   DESTROY_MY_INFO,
   CRAWLSTART,
-  FINDONE
+  FINDONE,
+  FETCH_BOARD_LIST,
+  FETCH_BOARD
 
 } from './mutation-types'
 
@@ -12,6 +14,12 @@ import axios from 'axios'
 import cookies from 'vue-cookies'
 
 export default {
+  [FETCH_BOARD_LIST] (state, boards) {
+    state.boards = boards
+  },
+  [FETCH_BOARD] (state, board) {
+    state.board = board
+  },
   [CRAWLSTART] (state, payload) {
     state.lists = payload
   },

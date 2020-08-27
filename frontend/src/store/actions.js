@@ -1,4 +1,6 @@
 import {
+  FETCH_BOARD_LIST,
+  FETCH_BOARD,
   SET_ACCESS_TOKEN,
   SET_MY_INFO,
   /* eslint-disable no-unused-vars */
@@ -15,6 +17,20 @@ import axios from 'axios'
 import router from '../router'
 
 export default {
+  fetchBoardList ({ commit }) {
+    return axios.get('http://localhost:7777/boards')
+      .then(res => {
+        commit(FETCH_BOARD_LIST, res.data)
+      })
+  },
+  fetchBoard ({ commit }, boardNo) {
+    console.log('fetchBoard ' + commit + ', boardNo = ' + boardNo)
+    return axios.get(`http://localhost:7777/boards/${boardNo}`)
+      .then(res => {
+        console.log('fetchBoard - res: ' + res.data)
+        commit(FETCH_BOARD, res.data)
+      })
+  },
   async crawlFind ({ commit }) {
     axios.get('http://localhost:7777/weather')
       .then(({ data }) => {
