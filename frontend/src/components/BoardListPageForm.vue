@@ -1,18 +1,16 @@
 <template>
   <div>
-    <h3>Board List</h3>
-    <table border="1">
+    <h3>뭐가없네..</h3>
+    <table class="wp">
       <tr>
         <th align="center" width="80">No</th>
         <th align="center" width="320">Title</th>
         <th align="center" width="100">Writer</th>
-        <th align="center" width="180">Registration Date</th>
       </tr>
       <tr v-for="page in paginatedData" :key="page.boardNo">
         <td>{{ page.boardNo }}</td>
         <td>{{ page.title }}</td>
         <td>{{ page.writer }}</td>
-        <td>{{ page.regDate }}</td>
       </tr>
     </table>
     <div class="btn-cover">
@@ -71,3 +69,37 @@ export default {
   }
 }
 </script>
+
+<style>
+.wp tr:nth-child(odd) {
+    background-color: #fff;
+}
+.wp tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+.wp tr {
+    border-bottom: 1px solid #ddd;
+}
+.wp th:first-child,
+.wp td:first-child {
+    padding-left: 16px;
+}
+.wp td,
+.wp th {
+    padding: 8px 8px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: top;
+}
+.wp th {
+    font-weight: bold;
+}
+.wp {
+  font-size: 13px!important;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+}
+</style>

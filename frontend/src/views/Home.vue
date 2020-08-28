@@ -19,7 +19,7 @@
           </router-link>
           <router-link :to="{ name: 'Memo' }"
             class="nav-link">
-          Memo
+          Todo
           </router-link>
           <a href="#" v-on:click="onClickLogout">Logout</a>
         </nav>

@@ -6,13 +6,11 @@
         <th align="center" width="80">No</th>
         <th align="center" width="320">Title</th>
         <th align="center" width="100">Writer</th>
-        <th align="center" width="180">Registration Date</th>
       </tr>
       <tr v-for="page in paginatedData" :key="page.boardNo">
         <td>{{ page.boardNo }}</td>
         <td>{{ page.title }}</td>
         <td>{{ page.writer }}</td>
-        <td>{{ page.regDate }}</td>
       </tr>
     </table>
     <div class="btn-cover">

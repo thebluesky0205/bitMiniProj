@@ -22,7 +22,7 @@ export default {
           console.log(res)
           alert('Register Success')
           this.$router.push({
-            name: 'BoardReadPage',
+            name: 'Attendance',
             params: { boardNo: res.data.boardNo.toString() }
           })
         })
